@@ -1,5 +1,5 @@
-def get_input() -> list[str]:
-    with open("input.txt", "r") as infile:
+def get_input(filename: str) -> list[str]:
+    with open(filename, "r") as infile:
         return [line for line in infile]
 
 
@@ -9,5 +9,5 @@ def parse_calibration(line: str) -> int:
 
 
 if __name__ == "__main__":
-    input_lines = get_input()
+    input_lines = get_input("input.txt")
     print(sum(map(parse_calibration, input_lines)))
